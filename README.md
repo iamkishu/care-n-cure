@@ -4,7 +4,7 @@
 Developed using Angular, HTML, CSS, Typescript
 
 # Backend
-Developed using Node.JS, HTML, CSS, Javascript, SQLServe
+Developed using Node.JS, HTML, CSS, Javascript, SQLServer
 
 # Pneumonia(AI-ML)
 Developed with azure custom vision under cognitive services
