@@ -1,0 +1,175 @@
+<mat-progress-bar *ngIf=!consultFlag mode="determinate" [value]="progressbarValue"></mat-progress-bar>
+
+<div class="header">
+  <img class="logo" src="../../../assets/images/logo3.PNG">
+  <div class="header-right">
+    <img (click) = 'onLogout()' class="logoutPic" src="../../../assets/images/logout.png">
+  </div>
+</div>
+<br>
+<div *ngIf=!consultFlag class="bButton">
+  <button class="backButton" (click)="onBackConsult()" mat-raised-button>Back</button>
+</div>
+
+<div *ngIf=consultFlag class="bButton">
+  <button class="backButton" (click)="onBackConsultBack()" mat-raised-button>Back</button>
+</div>
+
+<button  *ngIf=!consultFlag class="button" style="float: right;margin-right: 5rem;margin-top: 4rem;" (click)="onRefresh()" mat-raised-button color = "primary">Refresh</button>
+<button *ngIf=!consultFlag class="button" style="float: right;margin-right: -6rem;margin-top: 9rem;" (click)="onPres()" mat-raised-button color = "primary">Prescription</button>
+
+<div class="heading">
+
+  <h1 style="font-size: 3rem;
+  margin-left: 34rem;
+  margin-top: 2rem;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Consultation</h1>
+</div>
+<br>
+<div *ngIf=!consultFlag class="sheading">
+
+  <h3 class="scheading">Available Doctors</h3>
+</div>
+
+<div *ngIf=!consultFlag id="shadow">
+  <!-- User List -->
+  <table class="styled-table">
+    <thead>
+      <tr>
+        <th class="th"  style="padding: 15px 0px 15px 10px;">Name</th>
+        <th class="th">Email</th>
+        <th class="th">Phone Number</th>
+        <th class="th"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of doctorList; let i = index" [attr.data-index]="i">
+        <td>Dr. {{data.userName}}</td>
+        <td>{{data.email}}</td>
+        <td>{{data.phoneNumber}}</td>
+
+        <td>
+
+          <button mat-raised-button color="primary" (click)="onConsult(data.email);startTimer(5);">Consult</button>
+        </td>
+      </tr>
+
+
+    </tbody>
+  </table>
+</div>
+
+<div class="readings" *ngIf=consultFlag>
+  <mat-card class="readingCard">
+    <mat-card-header>
+      <mat-card-title>Vitals</mat-card-title>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <br>
+    <mat-card-content>
+      <form class="example-form">
+        <table class="example-full-width" cellspacing="0">
+          <tr>
+            <td>
+              <mat-form-field class="example-full-width">
+                <mat-label>Temperature</mat-label>
+                <input matInput placeholder="Enter in celcius" [(ngModel)]="temp" [ngModelOptions]="{standalone: true}"
+                  required>
+              </mat-form-field>
+            </td>
+
+            <td>
+              <mat-form-field class="example-full-width">
+                <mat-label>Blood Pressure</mat-label>
+                <input matInput placeholder="Enter in mmHg" [(ngModel)]="bp" [ngModelOptions]="{standalone: true}"
+                  required>
+              </mat-form-field>
+            </td>
+          </tr>
+        </table>
+        <br>
+        <table class="example-full-width" cellspacing="0">
+          <tr>
+            <td>
+              <mat-form-field class="example-full-width">
+                <mat-label>Oxygen Level</mat-label>
+                <input matInput placeholder="Enter in mg/L" [(ngModel)]="oxy" [ngModelOptions]="{standalone: true}"
+                  required>
+              </mat-form-field>
+            </td>
+
+            <td>
+              <mat-form-field class="example-full-width">
+                <mat-label>Heartbeat</mat-label>
+                <input matInput placeholder="Enter in bpm" [(ngModel)]="hb" [ngModelOptions]="{standalone: true}"
+                  required>
+              </mat-form-field>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <br>
+      <em style="margin-left: 12rem;" class="Phone is-animating" (click)="videoCall()"></em>
+      <br>
+      <mat-error *ngIf="callFlag">Connecting...</mat-error>
+      <mat-progress-bar *ngIf="callFlag" mode="indeterminate"></mat-progress-bar>
+    </mat-card-content>
+
+  </mat-card>
+
+</div>
+
+<div class="container" *ngIf='showDialog'>
+  <div id="myModal" class="modal" *ngIf='showDialog'>
+
+    <!-- Modal content -->
+    <div class="modal-content">
+
+      <h2 class='chatLink' style="font-style:italic;">Click on the below link for live chat with doctor</h2>
+      <div class="videoChat"><a href={{videoUrl}} target="_blank" style="cursor: pointer;">{{videoUrl}}</a>
+      </div>
+      <span class="close" (click)="closeDialog()">&times;</span>
+
+
+
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container" *ngIf='showDialog1'>
+  <div id="myModal" class="modal" *ngIf='showDialog1'>
+
+    <!-- Modal content -->
+    <div class="modal-content" style="width: 50%;height: 50%;">
+    
+      <div id="shadow">
+          <!-- User List -->
+          <br>
+          <table class = "styled-table" style="margin-left: -8rem; min-width: 30rem;">
+              <thead>
+                  <tr>
+                      <th class="th" style="padding: 15px 0px 15px 10px;">Date</th>
+                      <th class="th">Prescription</th>
+                  
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let data of presList; let i = index" [attr.data-index]="i">
+                      <td>{{data.updatedat | date: 'dd-MM-yyyy hh:mm a'}}</td>
+                      <td>{{data.presciption}}</td>
+                   
+                  </tr>
+
+
+              </tbody>
+          </table>
+
+
+      <span class="close" (click)="closeDialog1()">&times;</span>
+      
+
+  </div>
+</div>
+</div>
+</div>

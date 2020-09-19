@@ -1,0 +1,165 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<div class="header">
+  <img class="logo" src="../../../assets/images/logo3.PNG">
+  <div class="header-right">
+    <!-- <a class="active" href="#home">Home</a>
+    <a href="#contact">Contact</a>
+    <a href="#about">About</a> -->
+    <img (click)='onLogout()' class="logoutPic" src="../../../assets/images/logout.png">
+  </div>
+</div>
+<h1 *ngIf='!doctorFlag && patientFlag' style="font-size: 3rem;
+    margin-left: 33rem;
+    margin-top: 3rem;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Welcome {{userName}}!!
+ </h1>
+
+<h1 *ngIf='doctorFlag && !patientFlag' style="font-size: 3rem;
+    margin-left: 31rem;
+    margin-top: 3rem;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Welcome Dr. {{userName}}!! </h1>
+
+<button *ngIf='doctorFlag && !patientFlag' class="button" (click)="onRefresh()" mat-raised-button color = "primary">Refresh</button>
+
+<div *ngIf='!doctorFlag && patientFlag' class="row">
+  <div class="column">
+    <img class="cpic" src="../../assets/images/Consultation.png" alt="consult" style="width:100%"
+      (click)="onConsultationClick()">
+  </div>
+
+
+  <div class="column">
+    <img class="mpic" src="../../assets/images/Mental health.png" alt="mental" style="width:100%"
+      (click)="onMentalHealthClick()">
+  </div>
+
+  <div class="column">
+    <a (click) = "goToLink('https://www.netmeds.com')"> <img class="ppic" src="../../assets/images/Pharmacy.png" alt="pharmacy"
+        style="width:100%"></a>
+  </div>
+
+  <div class="column">
+    <img class="mpic" src="../../assets/images/lab.png" alt="mental" style="width:100%" (click)="onLabClick()">
+  </div>
+</div>
+
+<div *ngIf='!doctorFlag && patientFlag' class="rowTitle">
+  <div class="columnTitle">
+    <h2 style="font-size: xx-large;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+      Consultation</h2>
+  </div>
+
+
+  <div class="columnTitle">
+    <h2 style="font-size: xx-large;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+      Mental Health</h2>
+  </div>
+
+  <div class="columnTitle">
+    <h2 style="font-size: xx-large;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+      Pharmacy</h2>
+  </div>
+
+  <div class="columnTitle">
+    <h2
+      style="font-size: xx-large;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;margin-left: -12px;">
+      Diagnostics</h2>
+  </div>
+</div>
+
+<div *ngIf='doctorFlag && !patientFlag' class="details" style="float: left;">
+  <h2 style="font-size: x-large;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;margin-left: 1rem;">Your Patient Details</h2>
+  <h2 style="font-size: x-large;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;margin-left: 1rem;">Patient Name: {{patientName}}</h2>
+  <h2 style="font-size: x-large;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;margin-left: 45rem;">Vitals:</h2>
+  <div  *ngIf='doctorFlag && !patientFlag' id="shadow">
+    <!-- User List -->
+    <table class = "styled-table">
+        <thead>
+            <tr>
+                <th class="th" style="padding: 15px 0px 15px 10px;">Date</th>
+                <th class="th">Temperature</th>
+                <th class="th">Blood Pressure</th>
+                <th class="th">Oxygen Level</th>
+                <th class="th">Heartbeat</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of patientListArray; let i = index" [attr.data-index]="i">
+                <td>{{data.updatedat | date: 'dd-MM-yyyy hh:mm a'}}</td>
+                <td>{{data.temperature}} °C</td>
+                <td>{{data.bp}}</td>
+                <td>{{data.oxy}}</td>
+                <td>{{data.heartbpm}}</td>
+            </tr>
+
+
+        </tbody>
+    </table>
+</div>
+</div>
+
+<div  *ngIf='doctorFlag && !patientFlag' class="three-inline-buttons">
+  <p>
+    <button *ngIf = 'buttonFlag' class="button" (click)="connect()" mat-raised-button color = "primary">Connect</button>
+    <button *ngIf = '!buttonFlag' class="button"  mat-raised-button disabled>Connect</button>
+    <button *ngIf = 'buttonFlag'class="button" (click)="prescribe()" mat-raised-button color = "primary">Prescribe</button>
+    <button *ngIf = '!buttonFlag' class="button"  mat-raised-button disabled>Prescribe</button>
+    <button *ngIf = 'buttonFlag'class="button" (click)="endSession()" mat-raised-button color = "primary">End Session</button>
+    <button *ngIf = '!buttonFlag' class="button"  mat-raised-button disabled>End Session</button>
+  </p>
+  </div>
+
+   <div class="container" *ngIf='showDialog && doctorFlag && !patientFlag'>
+        <div id="myModal" class="modal" *ngIf='showDialog && doctorFlag && !patientFlag'>
+      
+          <!-- Modal content -->
+          <div class="modal-content" style="width: 40%;">
+            <h2 class='chatLink'style="font-style:italic;">Doctor Prescription</h2>
+          
+
+            <span class="close" (click)="closeDialog()">&times;</span>
+            <br>
+            <form class="example-form">
+             
+              
+              <mat-form-field class="example-full-width" style="margin-left: 2rem;">
+                <mat-label>Medicines & Test</mat-label>
+                <textarea style = "height: 175px;" matInput  [(ngModel)]="prescription" [ngModelOptions]="{standalone: true}" placeholder="Ex. Paracetamol 500mg..."></textarea>
+              </mat-form-field>
+            </form>   
+            <br>
+              <button class="logButton"  (click)="onLog()" mat-raised-button color = "primary">Log</button>
+        </div>
+      </div>
+      </div>
+    
+
+      <div class="container" *ngIf='showDialog1 && doctorFlag && !patientFlag'>
+        <div id="myModal" class="modal" *ngIf='showDialog1 && doctorFlag && !patientFlag'>
+      
+          <!-- Modal content -->
+          <div class="modal-content">
+            <h2 class='chatLink' style="font-style:italic;">Click on the below link for live chat with patient</h2>
+            <div class="videoChat"><a href={{videoUrl}} target="_blank" style="cursor: pointer;">{{videoUrl}}</a>
+            </div>
+            <span class="close" (click)="closeDialog1()">&times;</span>
+            
+        </div>
+      </div>
+      </div>
+
+      <div class="container" *ngIf='showDialog2 && doctorFlag && !patientFlag'>
+        <div id="myModal" class="modal" *ngIf='showDialog2 && doctorFlag && !patientFlag'>
+      
+          <!-- Modal content -->
+          <div class="modal-content" style="height: 30%;width: 55%;" >
+            <h2 class='chatLink' >Are you sure you want to end the session?</h2>
+            
+            <span class="close" (click)="closeDialog2()">&times;</span>
+            <br>
+            <button style="float: right;margin-right: 10rem;" (click)="onYes()" mat-raised-button color="warn">Yes</button>
+            <button style="float: right;margin-right: -10rem;" (click)="onNo()" mat-raised-button>No</button>
+            
+        </div>
+      </div>
+      </div>
+      

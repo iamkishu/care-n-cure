@@ -1,0 +1,9 @@
+create table users
+(
+userName varchar(50),
+email varchar(100),
+password varchar(70),
+phoneNumber numeric,
+role varchar(10)
+CONSTRAINT pk_user PRIMARY KEY (email)
+)

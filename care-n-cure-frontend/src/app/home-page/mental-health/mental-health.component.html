@@ -1,0 +1,93 @@
+
+<div class="header">
+    <img class="logo" src="../../../assets/images/logo3.PNG">
+    <div class="header-right">
+      <img (click) = 'onLogout()' class="logoutPic" src="../../../assets/images/logout.png">
+    </div>
+  </div>
+  
+  <div class="bButton">
+    <button class="backButton" (click)="onMentalBack()" mat-raised-button>Back</button>
+    </div>
+    <div class="dButton">
+        <button class="diaryButton" (click)="onDiary()" mat-raised-button color = "primary">Diary</button>
+        </div>
+  <h1 style="font-size: 3rem;
+    margin-left: 34rem;
+    margin-top: 2rem;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Mental Health</h1>
+
+
+  <div class="row">
+      <div class="column">
+        <img class="cpic" src="../../assets/images/ma_consult.png" alt="consult" style="width:100%" (click)="onConsultClick()">
+      </div>
+  
+      
+      <div class="column">
+        <img class = "mpic" src="../../assets/images/ma_game.png" alt="mental" style="width:100%" (click)="onMentalGameClick()">
+      </div>
+  
+      <div class="column">
+        <img class = "ppic" src="../../assets/images/ma_meditation.png" alt="pharmacy" style="width:100%" (click)="onMeditationClick()">
+      </div>
+    </div>
+  
+    <div class="rowTitle">
+      <div class="columnTitle">
+  <h2 style="font-size: xx-large;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Consultation</h2>
+      </div>
+  
+      
+      <div class="columnTitle">
+          <h2 style="font-size: xx-large;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Brain Games</h2>
+      </div>
+  
+      <div class="columnTitle">
+          <h2 style="font-size: xx-large;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Meditation</h2>
+      </div>
+    </div>
+  
+    <div class="container" *ngIf='showDialog'>
+        <div id="myModal" class="modal" *ngIf='showDialog'>
+      
+          <!-- Modal content -->
+          <div class="modal-content">
+          
+            <div id="shadow">
+                <!-- User List -->
+                <table class = "styled-table">
+                    <thead>
+                        <tr>
+                            <th class="th" style="padding: 15px 0px 15px 10px;">Date</th>
+                            <th class="th">Activity</th>
+                        
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of logList; let i = index" [attr.data-index]="i">
+                            <td>{{data.uploadedat | date: 'dd-MM-yyyy hh:mm a'}}</td>
+                            <td>{{data.activity}}</td>
+                         
+                        </tr>
+    
+    
+                    </tbody>
+                </table>
+  
+
+            <span class="close" (click)="closeDialog()">&times;</span>
+            
+            <form class="example-form">
+             
+              
+                <mat-form-field class="example-full-width">
+                  <mat-label>How is your day?</mat-label>
+                  <textarea matInput  [(ngModel)]="log" [ngModelOptions]="{standalone: true}" placeholder="Ex. It makes me feel..."></textarea>
+                </mat-form-field>
+              </form>   
+              <button class="logButton"  (click)="onLog()" mat-raised-button color = "primary">Log</button>
+        </div>
+      </div>
+      </div>
+      </div>
+      

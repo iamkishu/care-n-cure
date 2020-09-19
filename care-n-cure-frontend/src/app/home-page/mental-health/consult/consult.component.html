@@ -1,0 +1,78 @@
+
+
+<div class="header">
+    <img class="logo" src="../../../assets/images/logo3.PNG">
+    <div class="header-right">
+      <img (click) = 'onLogout()'  class="logoutPic" src="../../../assets/images/logout.png">
+    </div>
+  </div>
+<br>
+<div class="bButton">
+<button class="backButton" (click)="onBackConsult()" mat-raised-button>Back</button>
+</div>
+
+
+
+  <div class = "heading">
+
+      <h1 class="cheading">Consultation</h1>
+  </div>
+  <br>
+  <div class = "sheading">
+
+    <h3 class="scheading">Available Doctors</h3>
+</div>
+
+<div  id="shadow">
+            <!-- User List -->
+            <table class = "styled-table">
+                <thead>
+                    <tr>
+                        <th class="th" style="padding: 15px 0px 15px 10px;">S No.</th>
+                        <th class="th">Name</th>
+                        <th class="th">Email</th>
+                        <th class="th">Phone Number</th>
+                        <th class="th"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let data of doctorList; let i = index" [attr.data-index]="i">
+                        <td>{{i}}</td>
+                        <td>Dr. {{data.userName}}</td>
+                        <td>{{data.email}}</td>
+                        <td >{{data.phoneNumber}}</td>
+                     
+                        <td>
+                           
+                            <em style = "margin-left: 12rem;"class="Phone is-animating" (click)="videoCall(data.email)"></em>
+                        </td>
+                    </tr>
+
+
+                </tbody>
+            </table>
+        </div>
+  
+        
+        
+
+        <div class="container" *ngIf='showDialog'>
+            <div id="myModal" class="modal" *ngIf='showDialog'>
+          
+              <!-- Modal content -->
+              <div class="modal-content">
+    
+    <h2 class='chatLink'style="font-style:italic;">Click on the below link for live chat with doctor</h2>
+    <div class="videoChat"><a  href={{videoUrl}}
+    target="_blank"
+                            style="cursor: pointer;">{{videoUrl}}</a>
+                        </div>
+                <span class="close" (click)="closeDialog()">&times;</span>
+                
+                    
+          
+            </div>
+          </div>
+          </div>
+          
+    

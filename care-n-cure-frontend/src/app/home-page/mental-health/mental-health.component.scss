@@ -1,0 +1,296 @@
+.row {
+    display: flex;
+    margin-top: 0rem;
+  }
+  .rowTitle {
+    display: flex;
+    margin-top: 1rem;
+  }
+  
+  .column {
+    flex: 33.33%;
+    padding: 5px;
+   // width: 250px;
+   // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+  }  
+
+  .columnTitle {
+    flex: 33.33%;
+    padding: 5px;
+   // width: 250px;
+   // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+  }  
+
+
+  @media screen and (max-width: 500px) {
+    .column {
+      width: 100%;
+    }
+  }
+
+      .cpic:hover {
+        transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+      }
+      .mpic:hover {
+        transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+      }
+      .ppic:hover {
+        transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+      }
+
+.cpic {
+    margin-top: 8%;
+    width: 25rem!important;
+    margin-left: -3%;
+    transition: transform 0.2s;
+    cursor: pointer;
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(5px 5px 5px #222);
+    height: 18rem;
+    
+}
+.mpic {
+    margin-top: 8%;
+    width: 25rem!important;
+    margin-left: -3%;
+    transition: transform 0.2s;
+    cursor: pointer;
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(5px 5px 5px #222);
+    height: 18rem;
+    
+    
+}
+.ppic {
+    margin-top: 8%;
+    width: 25rem!important;
+    margin-left: -3%;
+    transition: transform 0.2s;
+    cursor: pointer;
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(5px 5px 5px #222);
+    height: 18rem;
+}
+.logOut {
+    float: right;
+    margin-top: -5rem;
+    margin-right: 3rem;
+}
+
+.container {
+    margin-top: 3rem;
+}
+
+
+
+#shadow {
+  float: left;
+  margin-left: 15rem;
+}
+
+.header {
+    overflow: hidden;
+    background-color: #d4e7ff ;
+  height: 6rem;
+    box-shadow: 0px 3px 5px #27272780;
+  }
+  
+  .header a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px; 
+    line-height: 25px;
+    border-radius: 4px;
+  }
+  
+  .header a.logo {
+    
+  }
+  
+  .header a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .header a.active {
+    background-color: dodgerblue;
+    color: white;
+  }
+  
+  .header-right {
+    float: right;
+  }
+  
+  @media screen and (max-width: 500px) {
+    .header a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+    
+    .header-right {
+      float: none;
+    }
+  }
+
+  .logo {
+    height: 108px;
+    margin-top: 6px;
+}
+
+.logoutPic {
+  margin-right: 4rem;
+  margin-top: 2rem;
+  cursor: pointer;
+}
+
+.logoutPic:hover {
+background-color: white;  
+}
+
+.bButton {
+    margin-left: 3rem;
+    margin-top: 3rem;
+    float: left;
+}
+
+.dButton {
+    margin-right: 4rem;
+    margin-top: 3rem;
+    float: right;
+}
+
+
+.modal {
+    display: block; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 3; /* Sit on top */
+    padding-top: 50px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: hidden; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    border:1px solid black;
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #ffffff;
+    margin: auto;
+    border: 1px solid #888;
+    width: 75%;
+    border-radius: 0px;
+    height: 75%;
+    margin-top: 8%;
+  }
+  
+  /* The Close Button */
+  .close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+    padding-top: 20px;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: red;
+    cursor: pointer;
+  }
+  /*Close filter button*/
+  .closeFilter {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #000;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .closeFilter:hover,
+  .closeFilter:focus {
+    color: red;
+    cursor: pointer;
+  }
+  
+  .marginLeft{
+    margin-left:10px;
+  }
+  
+  
+  #container {
+    position: relative;
+  }
+  #navi,
+  #infoi {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-top: 450px;
+  }
+  #infoi {
+    z-index: 10;
+  }
+
+  
+  .styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0px 3px 5px #27272780;
+    -webkit-box-shadow: 0px 3px 5px #27272780;
+  -moz-box-shadow: 0px 10px 3px #27272780;
+  position: relative;
+ // z-index: 999999;
+    min-width: 45rem;
+    margin-left: -5rem;
+  }
+  
+  .styled-table thead tr {
+    background-color: #d4e7ff;
+    color: #ffffff;
+    text-align: left;
+  }
+  
+  .styled-table th,
+  .styled-table td {
+    padding: 12px 15px;
+  }
+  
+  styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+  }
+  
+  .styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+  }
+  
+  .styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #d4e7ff;
+  }
+  
+
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }

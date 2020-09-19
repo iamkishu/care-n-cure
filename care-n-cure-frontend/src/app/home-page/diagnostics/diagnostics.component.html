@@ -1,0 +1,67 @@
+
+<div class="header">
+    <img class="logo" src="../../../assets/images/logo3.PNG">
+    <div class="header-right">
+      <img (click) = 'onLogout()' class="logoutPic" src="../../../assets/images/logout.png">
+    </div>
+  </div>
+  
+  <div class="bButton">
+    <button class="backButton" (click)="onDiagnosticsBack()" mat-raised-button>Back</button>
+    </div>
+  <h1 style="font-size: 3rem;
+    margin-left: 36rem;
+    margin-top: 2rem;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Diagnostics</h1>
+
+<div class="row">
+    <div class="column">
+      <img class="mpic" src="../../../assets/images/lung.png" alt="consult" style="width:100%" (click)="onLungClick()">
+    </div>
+
+    <div class="column">
+      <img class="mpic" src="../../../assets/images/covid.png" alt="consult" style="width:100%" (click)="onCovidClick()">
+    </div>
+
+    
+    <div class="column">
+      <img class = "cpic" src="../../../assets/images/test.png" alt="mental" style="width:100%" (click)="onTestClick()">
+    </div>
+  </div>
+
+  <div class="rowTitle">
+    <div class="columnTitle">
+<h2 style="font-size: xx-large;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Pneumonia X-Ray Analysis(AI Powered)</h2>
+    </div>
+
+    <div class="columnTitle">
+      <h2 style="font-size: xx-large;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Covid X-Ray Analysis(AI Powered)</h2>
+          </div>
+      
+
+    
+    <div class="columnTitle">
+        <h2 style="font-size: xx-large;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">In Person Testing</h2>
+    </div>
+
+  </div>
+
+
+  <div class="container" *ngIf='showDialog'>
+    <div id="myModal" class="modal" *ngIf='showDialog'>
+  
+      <!-- Modal content -->
+      <div class="modal-content">
+      
+        
+        <h3  style="color: white;font-size: xx-large; font-style:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;margin-top: 5%;margin-left: 5%;">Under Construction</h3>
+
+        <span class="close" (click)="closeDialog()">&times;</span>
+        
+        
+         
+          
+          
+    
+  </div>
+  </div>
+  </div>
