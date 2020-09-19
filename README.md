@@ -7,7 +7,7 @@ Developed using Angular, HTML, CSS, Typescript
 Developed using Node.JS, HTML, CSS, Javascript, SQLServe
 
 # Pneumonia(AI-ML)
-Developed with azure custom vision if cognitive services
+Developed with azure custom vision under cognitive services
 
 # Covid19(AI-ML)
-Developed with azure custom vision if cognitive services
+Developed with azure custom vision under cognitive services
