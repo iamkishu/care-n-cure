@@ -3,7 +3,8 @@
 
 # Frontend 
 Developed using Angular, HTML, CSS, Typescript
-![Frontend](https://care-n-cure.azurewebsites.net/assets/images/title.PNG)
+
+![Frontend]()
 
 # Backend
 Developed using Node.JS, HTML, CSS, Javascript, SQLServer
