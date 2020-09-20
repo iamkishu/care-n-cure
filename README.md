@@ -1,5 +1,5 @@
 # Care-n-Cure
-![care-n-cure](https://drive.google.com/drive/folders/1_N0EfgWakfW1hQA7pwsdhBXr9vm1InyY)
+![care-n-cure](https://care-n-cure.azurewebsites.net/assets/images/logo3.PNG)
 
 # Frontend 
 Developed using Angular, HTML, CSS, Typescript
