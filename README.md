@@ -1,7 +1,9 @@
 # Care-n-Cure
+![care-n-cure](https://care-n-cure.azurewebsites.net/assets/images/title.PNG)
 
 # Frontend 
 Developed using Angular, HTML, CSS, Typescript
+
 
 # Backend
 Developed using Node.JS, HTML, CSS, Javascript, SQLServer
