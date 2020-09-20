@@ -4,7 +4,7 @@
 # Frontend 
 Developed using Angular, HTML, CSS, Typescript
 
-![Frontend]()
+![Frontend](https://user-images.githubusercontent.com/54450970/93712834-e3370280-fb75-11ea-924d-a5452a92f044.PNG)
 
 # Backend
 Developed using Node.JS, HTML, CSS, Javascript, SQLServer
