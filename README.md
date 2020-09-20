@@ -11,7 +11,7 @@ Developed using Node.JS, HTML, CSS, Javascript, SQLServer
 
 # Pneumonia(AI-ML)
 Developed with azure custom vision under cognitive services
-![Pneumonia]()
+![Pneumonia](https://user-images.githubusercontent.com/54450970/93712875-25f8da80-fb76-11ea-803a-42eda383e570.PNG)
 
 # Covid19(AI-ML)
 Developed with azure custom vision under cognitive services
