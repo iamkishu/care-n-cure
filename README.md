@@ -15,8 +15,8 @@ Developed with azure custom vision under cognitive services
 Developed with azure custom vision under cognitive services
 
 # Contributors
-Kadiyam Bala Sai Kishore <br/>
-Kavya Jain <br/>
-Shreyan J D Fernandes <br/>
-Srihari Sithu Sudarsan <br/>
-Meghana Chikkam
+*Kadiyam Bala Sai Kishore <br/>
+*Kavya Jain <br/>
+*Shreyan J D Fernandes <br/>
+*Srihari Sithu Sudarsan <br/>
+*Meghana Chikkam
