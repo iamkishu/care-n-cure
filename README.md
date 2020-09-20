@@ -11,3 +11,10 @@ Developed with azure custom vision under cognitive services
 
 # Covid19(AI-ML)
 Developed with azure custom vision under cognitive services
+
+# Contributors
+Kadiyam Bala Sai Kishore
+Kavya Jain
+Shreyan J D Fernandes
+Srihari Sithu Sudarshan
+Meghana Chikkam
