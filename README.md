@@ -16,7 +16,7 @@ Developed with azure custom vision under cognitive services
 Developed with azure custom vision under cognitive services
 
 # Contributors
-- Team Reboot Rebels
+Team Name: **Reboot Rebels**
 
 * Kadiyam Bala Sai Kishore <br/>
 * Kavya Jain <br/>
